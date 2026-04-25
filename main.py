@@ -14,7 +14,7 @@ async def get_price():
     		headless=True,
     		args=["--no-sandbox", "--disable-setuid-sandbox"]
 	)
-	page = await browser.new_page()
+	    page = await browser.new_page()
         URL = 'https://www.flipkart.com/lenovo-loq-2025-amd-ryzen-7-octa-core-24-gb-1-tb-ssd-windows-11-home-8-gb-graphics-nvidia-geforce-rtx-5050-15ahp10-gaming-laptop/p/itm2c8883c14f978'
         await page.goto(URL)
         await page.wait_for_load_state("networkidle")
