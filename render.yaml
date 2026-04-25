@@ -4,7 +4,7 @@ services:
     env: python
     plan: starter
 
-    runtime: python-3.11.8
+    pythonVersion: 3.11.8
 
     buildCommand: |
       python -m pip install --upgrade pip
