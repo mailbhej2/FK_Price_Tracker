@@ -4,7 +4,7 @@ from selectolax.parser import HTMLParser
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN =  os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
 
