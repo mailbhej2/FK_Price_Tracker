@@ -40,6 +40,5 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("price", price))
-
 app.run_polling()
 
