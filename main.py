@@ -4,7 +4,7 @@ from selectolax.parser import HTMLParser
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-TOKEN =  os.getenv("BOT_TOKEN")
+TOKEN = "8654703995:AAGQ0STYEcXZe1Ca5Lh4647TnH3T7Apwlag" # os.getenv("BOT_TOKEN")
 CHAT_ID = "266428657"
 
 URL = None
@@ -83,9 +83,13 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
     base_price, bank_discount = await get_price()
 
     if base_price:
-        await update.message.reply_text(
-            f"😕 No Big Savings Yet\n\n💻 Current Price: {base_price}\n💳 Bank Offer: ₹{bank_discount}\n\n⏳ Waiting for a better deal..."
-        )
+        if base_price:
+            if THRESHOLD and bank_discount >= THRESHOLD:
+                msg = f"🔥 Deal Found!\n\n💻 Price: {base_price}\n💳 Bank Discount: ₹{bank_discount}\n\n🚀 Grab it fast!"
+            else:
+                msg = f"😕 No Big Savings Yet\n\n💻 Current Price: {base_price}\n💳 Bank Offer: ₹{bank_discount}\n\n⏳ Waiting for a better deal..."
+
+            await update.message.reply_text(msg)
     else:
         await update.message.reply_text("😕 Something went wrong...")
 
