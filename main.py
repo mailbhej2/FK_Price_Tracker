@@ -10,8 +10,6 @@ CHAT_ID = "266428657"
 URL = None
 THRESHOLD = None
 LAST_SENT = None
-CHAT_ID = "266428657"
-
 
 def format_price(price):
     return int(price.replace("₹", "").replace(",", "").strip())
